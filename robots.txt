@@ -1,0 +1,23 @@
+# robots.txt for recipeideas.blog
+User-agent: *
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+Crawl-delay: 1
+
+User-agent: Pinterestbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://recipeideas.blog/sitemap.xml
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/

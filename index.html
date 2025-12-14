@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Ideas | Culinary Inspiration & Creative Cooking</title>
+    <meta name="description" content="Explore innovative recipes, cooking techniques, and culinary inspiration. From weeknight dinners to gourmet creations, find your next delicious idea.">
+    
+    <!-- Pinterest Verification & Rich Pins -->
+    <meta name="p:domain_verify" content="your-pinterest-verification-code">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Recipe Ideas">
+    <meta property="og:title" content="Recipe Ideas | Culinary Inspiration & Creative Cooking">
+    <meta property="og:description" content="Innovative recipes, cooking techniques, and culinary inspiration for every home chef.">
+    <meta property="og:image" content="https://recipeideas.blog/images/og-image.jpg">
+    <meta property="og:url" content="https://recipeideas.blog">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recipe Ideas | Culinary Inspiration">
+    <meta name="twitter:description" content="Innovative recipes and cooking inspiration.">
+    <meta name="twitter:image" content="https://recipeideas.blog/images/og-image.jpg">
+    
+    <link rel="canonical" href="https://recipeideas.blog">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Recipe Ideas",
+        "url": "https://recipeideas.blog",
+        "description": "Culinary inspiration and creative cooking ideas",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Recipe Ideas",
+            "logo": { "@type": "ImageObject", "url": "https://recipeideas.blog/images/logo.png" }
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --black: #0A0A0A;
+            --dark: #141414;
+            --dark-gray: #1E1E1E;
+            --medium-gray: #2A2A2A;
+            --light-gray: #888;
+            --white: #FFFFFF;
+            --cream: #F5F5F0;
+            --gold: #D4A853;
+            --gold-light: #E8C97A;
+            --coral: #FF6B6B;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--black);
+            color: var(--cream);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .display-font { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-accent {
+            color: var(--gold);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        nav a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover { color: var(--gold); }
+        
+        .nav-cta {
+            background: var(--gold);
+            color: var(--black);
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+        }
+        
+        .nav-cta:hover {
+            background: var(--gold-light);
+            color: var(--black);
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 60px;
+        }
+        
+        .hero-content {
+            padding: 6rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--dark);
+        }
+        
+        .hero-label {
+            color: var(--gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-size: 5rem;
+            line-height: 0.95;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            max-width: 450px;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+        }
+        
+        .btn-primary:hover {
+            background: var(--gold-light);
+        }
+        
+        .btn-outline {
+            border: 1px solid var(--light-gray);
+            color: var(--white);
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--white);
+            background: var(--white);
+            color: var(--black);
+        }
+        
+        .hero-image {
+            background: linear-gradient(135deg, var(--medium-gray) 0%, var(--dark-gray) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+        
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--gold);
+            color: var(--black);
+            padding: 2rem;
+        }
+        
+        .stats-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--white);
+        }
+        
+        .view-all {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+        
+        .view-all:hover { gap: 1rem; }
+        
+        /* Featured Grid */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .featured-main {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            background: var(--dark-gray);
+        }
+        
+        .featured-main .recipe-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10rem;
+            background: linear-gradient(135deg, #2D1F1F 0%, var(--dark-gray) 100%);
+        }
+        
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.95));
+        }
+        
+        .recipe-tag {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .featured-overlay h3 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+        
+        .featured-overlay p {
+            color: var(--light-gray);
+            font-size: 1rem;
+            max-width: 500px;
+        }
+        
+        .featured-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .featured-small {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background: var(--dark-gray);
+        }
+        
+        .featured-small .recipe-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .featured-small:nth-child(1) .recipe-image { background: linear-gradient(135deg, #1F2D1F 0%, var(--dark-gray) 100%); }
+        .featured-small:nth-child(2) .recipe-image { background: linear-gradient(135deg, #1F1F2D 0%, var(--dark-gray) 100%); }
+        
+        .featured-small .featured-overlay {
+            padding: 1.5rem;
+        }
+        
+        .featured-small .featured-overlay h3 {
+            font-size: 1.3rem;
+        }
+        
+        /* Recipe Grid */
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .recipe-card {
+            background: var(--dark);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+        
+        .recipe-card .recipe-image {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+        
+        .recipe-card:nth-child(1) .recipe-image { background: linear-gradient(135deg, #2D2D1F 0%, var(--dark-gray) 100%); }
+        .recipe-card:nth-child(2) .recipe-image { background: linear-gradient(135deg, #2D1F2D 0%, var(--dark-gray) 100%); }
+        .recipe-card:nth-child(3) .recipe-image { background: linear-gradient(135deg, #1F2D2D 0%, var(--dark-gray) 100%); }
+        .recipe-card:nth-child(4) .recipe-image { background: linear-gradient(135deg, #2D1F1F 0%, var(--dark-gray) 100%); }
+        
+        .recipe-content {
+            padding: 1.5rem;
+        }
+        
+        .recipe-content h3 {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        
+        .recipe-content p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .recipe-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--light-gray);
+        }
+        
+        .recipe-link {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            transition: letter-spacing 0.3s;
+        }
+        
+        .recipe-link:hover { letter-spacing: 2px; }
+        
+        /* Categories */
+        .categories {
+            margin-top: 5rem;
+            padding-top: 5rem;
+            border-top: 1px solid var(--medium-gray);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+        }
+        
+        .category-card {
+            background: var(--dark);
+            padding: 2rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid var(--medium-gray);
+            transition: all 0.3s;
+        }
+        
+        .category-card:hover {
+            border-color: var(--gold);
+            background: var(--dark-gray);
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-card h4 {
+            color: var(--white);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .category-card span {
+            color: var(--light-gray);
+            font-size: 0.75rem;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            margin-top: 5rem;
+            background: var(--dark);
+            padding: 5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .newsletter h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter p {
+            color: var(--light-gray);
+            font-size: 1.1rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            background: var(--black);
+            border: 1px solid var(--medium-gray);
+            color: var(--white);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: var(--light-gray);
+        }
+        
+        .newsletter-form button {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 1rem 2rem;
+            font-family: inherit;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--gold-light);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 4rem 2rem 2rem;
+            margin-top: 5rem;
+            border-top: 1px solid var(--medium-gray);
+        }
+        
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .footer-brand h3 {
+            font-size: 2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-brand p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links h4 {
+            color: var(--gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links ul { list-style: none; }
+        
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.4rem 0;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover { color: var(--white); }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--medium-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--light-gray);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .recipes-grid { grid-template-columns: repeat(2, 1fr); }
+            .categories-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-content { padding: 4rem 2rem; }
+            .hero-image { min-height: 300px; font-size: 8rem; }
+            .featured-grid { grid-template-columns: 1fr; }
+            .featured-main { height: 400px; }
+            .newsletter { grid-template-columns: 1fr; padding: 3rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 1rem; }
+            nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 3rem; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .section-header h2 { font-size: 2rem; }
+            .recipes-grid { grid-template-columns: 1fr; }
+            .categories-grid { grid-template-columns: repeat(2, 1fr); }
+            .newsletter-form { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 1rem; }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .recipe-card, .category-card {
+            animation: fadeIn 0.5s ease backwards;
+        }
+        
+        .recipe-card:nth-child(1), .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .recipe-card:nth-child(2), .category-card:nth-child(2) { animation-delay: 0.15s; }
+        .recipe-card:nth-child(3), .category-card:nth-child(3) { animation-delay: 0.2s; }
+        .recipe-card:nth-child(4), .category-card:nth-child(4) { animation-delay: 0.25s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo display-font">Recipe<span class="logo-accent">Ideas</span></a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/trending">Trending</a></li>
+                    <li><a href="/cuisines">Cuisines</a></li>
+                    <li><a href="/techniques">Techniques</a></li>
+                    <li><a href="/seasonal">Seasonal</a></li>
+                    <li><a href="/subscribe" class="nav-cta">Subscribe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">Culinary Inspiration</span>
+            <h1 class="display-font">Discover Your Next Favorite Dish</h1>
+            <p>From innovative weeknight dinners to show-stopping entertaining ideas, find culinary inspiration that transforms everyday cooking into something extraordinary.</p>
+            <div class="hero-buttons">
+                <a href="/recipes" class="btn btn-primary">Explore Recipes</a>
+                <a href="/trending" class="btn btn-outline">What's Trending</a>
+            </div>
+        </div>
+        <div class="hero-image">🍽️</div>
+    </section>
+    
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat">
+                <div class="stat-number">2,500+</div>
+                <div class="stat-label">Recipes</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">45</div>
+                <div class="stat-label">Cuisines</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100K+</div>
+                <div class="stat-label">Home Cooks</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">Weekly</div>
+                <div class="stat-label">New Ideas</div>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <div class="section-header">
+            <h2 class="display-font">Editor's Picks</h2>
+            <a href="/editors-picks" class="view-all">View All →</a>
+        </div>
+        
+        <div class="featured-grid">
+            <article class="featured-main" itemscope itemtype="https://schema.org/Recipe">
+                <div class="recipe-image">🥩</div>
+                <div class="featured-overlay">
+                    <span class="recipe-tag">Featured</span>
+                    <h3 class="display-font" itemprop="name">Miso-Glazed Black Cod with Bok Choy</h3>
+                    <p itemprop="description">Silky cod caramelized in sweet white miso, served over ginger-garlic bok choy with crispy shallots.</p>
+                </div>
+            </article>
+            
+            <div class="featured-sidebar">
+                <article class="featured-small" itemscope itemtype="https://schema.org/Recipe">
+                    <div class="recipe-image">🍜</div>
+                    <div class="featured-overlay">
+                        <span class="recipe-tag">Popular</span>
+                        <h3 class="display-font" itemprop="name">Spicy Dan Dan Noodles</h3>
+                    </div>
+                </article>
+                
+                <article class="featured-small" itemscope itemtype="https://schema.org/Recipe">
+                    <div class="recipe-image">🥗</div>
+                    <div class="featured-overlay">
+                        <span class="recipe-tag">Quick</span>
+                        <h3 class="display-font" itemprop="name">Charred Caesar with Anchovy Croutons</h3>
+                    </div>
+                </article>
+            </div>
+        </div>
+        
+        <div class="section-header">
+            <h2 class="display-font">Latest Ideas</h2>
+            <a href="/recipes" class="view-all">View All →</a>
+        </div>
+        
+        <div class="recipes-grid">
+            <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                <div class="recipe-image">🍗</div>
+                <div class="recipe-content">
+                    <span class="recipe-tag">Dinner</span>
+                    <h3 itemprop="name">Crispy Korean Fried Chicken</h3>
+                    <p itemprop="description">Double-fried for extra crunch, tossed in gochujang glaze.</p>
+                    <div class="recipe-meta">
+                        <span>45 min</span>
+                        <span>4 servings</span>
+                    </div>
+                    <a href="/recipes/korean-fried-chicken" class="recipe-link">View Recipe →</a>
+                </div>
+            </article>
+            
+            <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                <div class="recipe-image">🥟</div>
+                <div class="recipe-content">
+                    <span class="recipe-tag">Appetizer</span>
+                    <h3 itemprop="name">Pork & Chive Dumplings</h3>
+                    <p itemprop="description">Hand-folded with crispy bottoms and savory filling.</p>
+                    <div class="recipe-meta">
+                        <span>1 hr</span>
+                        <span>40 dumplings</span>
+                    </div>
+                    <a href="/recipes/pork-chive-dumplings" class="recipe-link">View Recipe →</a>
+                </div>
+            </article>
+            
+            <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                <div class="recipe-image">🍰</div>
+                <div class="recipe-content">
+                    <span class="recipe-tag">Dessert</span>
+                    <h3 itemprop="name">Basque Burnt Cheesecake</h3>
+                    <p itemprop="description">Caramelized exterior, impossibly creamy center.</p>
+                    <div class="recipe-meta">
+                        <span>1 hr 15 min</span>
+                        <span>10 slices</span>
+                    </div>
+                    <a href="/recipes/basque-burnt-cheesecake" class="recipe-link">View Recipe →</a>
+                </div>
+            </article>
+            
+            <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                <div class="recipe-image">🥘</div>
+                <div class="recipe-content">
+                    <span class="recipe-tag">One Pot</span>
+                    <h3 itemprop="name">Lamb Tagine with Apricots</h3>
+                    <p itemprop="description">Moroccan spiced lamb slow-cooked until fork tender.</p>
+                    <div class="recipe-meta">
+                        <span>2 hr 30 min</span>
+                        <span>6 servings</span>
+                    </div>
+                    <a href="/recipes/lamb-tagine-apricots" class="recipe-link">View Recipe →</a>
+                </div>
+            </article>
+        </div>
+        
+        <section class="categories">
+            <div class="section-header">
+                <h2 class="display-font">Browse by Category</h2>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="/category/appetizers" class="category-card">
+                    <div class="category-icon">🥗</div>
+                    <h4>Appetizers</h4>
+                    <span>124 recipes</span>
+                </a>
+                <a href="/category/mains" class="category-card">
+                    <div class="category-icon">🍖</div>
+                    <h4>Main Dishes</h4>
+                    <span>386 recipes</span>
+                </a>
+                <a href="/category/pasta" class="category-card">
+                    <div class="category-icon">🍝</div>
+                    <h4>Pasta</h4>
+                    <span>98 recipes</span>
+                </a>
+                <a href="/category/seafood" class="category-card">
+                    <div class="category-icon">🦐</div>
+                    <h4>Seafood</h4>
+                    <span>156 recipes</span>
+                </a>
+                <a href="/category/desserts" class="category-card">
+                    <div class="category-icon">🍰</div>
+                    <h4>Desserts</h4>
+                    <span>212 recipes</span>
+                </a>
+                <a href="/category/drinks" class="category-card">
+                    <div class="category-icon">🍹</div>
+                    <h4>Drinks</h4>
+                    <span>67 recipes</span>
+                </a>
+            </div>
+        </section>
+        
+        <section class="newsletter">
+            <div>
+                <h2 class="display-font">Get Weekly Inspiration</h2>
+                <p>Join 100,000+ home cooks receiving our best recipes and culinary ideas every week.</p>
+            </div>
+            <form class="newsletter-form" action="/subscribe" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3 class="display-font">Recipe<span style="color: var(--gold)">Ideas</span></h3>
+                <p>Culinary inspiration for the modern home cook. Discover innovative recipes, master new techniques, and transform your everyday cooking.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/trending">Trending</a></li>
+                    <li><a href="/cuisines">World Cuisines</a></li>
+                    <li><a href="/techniques">Techniques</a></li>
+                    <li><a href="/seasonal">Seasonal</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/advertise">Advertise</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Use</a></li>
+                    <li><a href="/sitemap.xml">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Recipe Ideas. All rights reserved.</span>
+            <div class="social-links">
+                <a href="https://pinterest.com/recipeideasblog" aria-label="Pinterest">📌</a>
+                <a href="https://instagram.com/recipeideasblog" aria-label="Instagram">📷</a>
+                <a href="https://youtube.com/recipeideasblog" aria-label="YouTube">🎬</a>
+                <a href="https://tiktok.com/@recipeideasblog" aria-label="TikTok">🎵</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
